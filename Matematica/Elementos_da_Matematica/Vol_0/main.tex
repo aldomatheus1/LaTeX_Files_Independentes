@@ -1,0 +1,685 @@
+\documentclass{article}
+\usepackage{graphicx, amsfonts, amsmath, amssymb, float, enumerate, calrsfs, indentfirst, gensymb, tikz}
+\usepackage[portuguese]{babel}
+\renewcommand{\figurename}{Figura}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\makeatletter
+\newcommand\subsubsubsection{\@startsection{paragraph}{4}{\z@}{-2.5ex\@plus -1ex \@minus -.25ex}{1.25ex \@plus .25ex}{\normalfont\normalsize\bfseries}}
+\makeatother
+
+\title{Elementos da Matemática - Volume 0}
+\author{Aldo Matheus Aquino de Franca}
+\date{\today}
+
+\begin{document}
+\maketitle
+ 
+\section{Potênciação e Radiciação}
+\subsection{Potências com expoentes reais}
+Como podemos adotar o processo de radiciação como um caso específico da potenciação onde o expoente está na forma $1/n$, com $n\in\mathbb{Z}_+^*$, citaremos apenas as propriedades de potenciação com expoentes reais.\\
+\indent Para $A,B,x\text{ e }y\in\mathbb{R}$:
+\begin{enumerate}[\quad 1)]
+    \item $(A\cdot B)^x=A^x\cdot B^x$
+    \item $A^x\cdot A^y=A^{x+y}$
+    \item $(A^x)^y=A^{x\cdot y}$
+    \item $\left(\dfrac{A}{B}\right)^x=\dfrac{A^x}{B^x}$
+    \item $\dfrac{A^x}{A^y}=A^{x-y}$
+    \item $A^{-x}=\dfrac{1}{A^x}$
+\end{enumerate}
+
+\subsection{Aproximação de raiz quadrada - Método da sequência recorrente}
+O método é baseado em dois passos, de forma que se queira obter a $\sqrt{n}$:
+\begin{enumerate}[\quad 1)]
+    \item Escolhe-se $a_0>0$, tal que $a_0^2> n$
+    \item Calcula-se $a_k=\dfrac{1}{2}\left(a_{k-1}+\dfrac{n}{a_{k-1}}\right),\quad k=1,2,3,\cdots$
+\end{enumerate}
+\indent \indent Uma boa escolha para $a_0$ é o menor inteiro que seja maior que a raiz quadrada de $n$.
+
+\section{Bases de Numeração}
+\subsection{Teorema}
+Um número possui apenas uma única representação em determinada base.
+
+\subsection{Conversão de base 10 para uma base b qualquer}
+Para converter um número $(x)_{10}, (x\in\mathbb{N})$ para uma outra base b qualquer, realiza-se o seguinte algoritmo:
+    \begin{itemize}
+        \item $\text{Divide-se } x \text{ por }b: x=b\cdot q_0+r_0$
+        \item $\text{Divide-se } q_0 \text{ por }b: q_0=b\cdot q_1+r_1$
+        \item $\ldots$
+        \item $\text{Divide-se } q_{n-1} \text{ por }b: q_{n-1}=b\cdot q_n+r_n$
+    \end{itemize}
+este procedimento se repete até que seja encontrado um quociente igual à zero, que ocorre quando $q_{n-1}<b$. \\
+\indent O número $x$ na base b é formado pelos restos de divisão $r_0,r_1,\cdots,r_n$ na ordem inversa em que foram obtidos, ou seja, $(x)_{10}=(r_nr_{n-1}\cdots r_0)_b$.
+
+\section{Médias}
+\subsection{Média aritmética}
+\begin{equation*}
+    M.A.=\dfrac{a_1+a_2+\ldots+a_n}{n}
+\end{equation*}
+
+\subsection{Média ponderada}
+\begin{equation*}
+    M.P.=\dfrac{a_1\cdot p_1+a_2\cdot p_2+\ldots+a_n\cdot p_n}{p_1+p_2+\ldots+p_n}
+\end{equation*}
+
+\subsection{Média geométrica}
+\begin{equation*}
+    M.G.=\sqrt[n]{a_1\cdot a_2\cdot\ldots\cdot a_n}
+\end{equation*}
+
+\subsection{Média harmônica}
+\begin{equation*}
+    M.H.=\dfrac{n}{\dfrac{1}{a_1}+\dfrac{1}{a_2}+\ldots+\dfrac{1}{a_n}}
+\end{equation*}
+
+\subsection{Média quadrática}
+\begin{equation*}
+    M.Q.=\sqrt{\dfrac{a_1^2+a_2^2+\ldots+a_n^2}{n}}
+\end{equation*}
+
+\subsection{Desigualdade entre médias}
+Dado $\{a_1,a_2,\ldots,a_n\}\in\mathbb{R^+}$, então:
+\begin{equation*}
+    M.Q.\geq M.A.\geq M.G. \geq M.H.
+\end{equation*}
+
+
+\section{Razões e Proporções}
+\subsection{Princípio fundamental da proporcionalidade}
+Duas grandezas são diretamente proporcionais quando existir uma correspondência $f:\mathbb{R_+}\rightarrow\mathbb{R_+}$, dada por $f(x)=y$ entre as medidas delas, $x$ e $y$, de tal sorte que as duas condições a seguir sejam satisfeitas:
+\begin{enumerate}[\quad 1)]
+    \item A correspondência é estritamente crescente, ou seja: $x_1<x_2\Rightarrow y_1<y_2$
+    \item Multiplicando-se uma por um número natural $n$, a outra também tem seu valor multiplicado por $n$, ou seja: $f(nx)=nf(x), \forall x\in\mathbb{R_+}, \forall n \in \mathbb{N}$
+\end{enumerate}
+
+\subsection{Proporção entre razões}
+Dados $n$ números reais $x_1,x_2,\ldots,x_n,y_1,y_2,\ldots,y_n$, não nulos, as razões $\dfrac{x_1}{y_1},\dfrac{x_2}{y_2},\ldots,\dfrac{x_n}{y_n}$ são equivalentes se, e somente se:
+$$\dfrac{x_1}{y_1}=\dfrac{x_2}{y_2}=\ldots=\dfrac{x_n}{y_n}$$
+\subsubsection{Propriedades}
+\begin{enumerate}[\quad \quad 1)]
+    \item $\dfrac{x_1}{y_1}=\dfrac{x_2}{y_2}=\ldots=\dfrac{x_n}{y_n}=\dfrac{\pm x_1\pm x_2\pm\ldots\pm x_n}{\pm y_1\pm y_2 \pm\ldots\pm y_n}$
+    \item $\dfrac{x_1}{y_1}=\dfrac{x_2}{y_2}=\ldots=\dfrac{x_n}{y_n}=\dfrac{\pm a_1\cdot x_1\pm a_2\cdot  x_2\pm\ldots\pm  a_n\cdot x_n}{\pm a_1\cdot  y_1\pm a_2\cdot  y_2 \pm\ldots\pm a_n\cdot  y_n}$
+    \item $\dfrac{x_1\cdot x_2 \cdot\ldots\cdot x_n}{y_1\cdot y_2 \cdot\ldots\cdot y_n}=\left(\dfrac{x_1}{y_1}\right)^n=\left(\dfrac{x_2}{y_2}\right)^n=\ldots=\left(\dfrac{x_n}{y_n}\right)^n$
+\end{enumerate}
+Note que:
+\begin{enumerate}[\quad\quad\quad i)]
+    \item A soma do denominador sempre tem de ser diferente de zero.
+    \item Para cada índice $i$, o sinal de $x_i$ e $y_i$ deve ser o mesmo. 
+\end{enumerate}
+
+\subsection{Divisão em partes diretamente proporcionais}
+Dividir um número $x \in\mathbb{R}$ em $n$ partes diretamente proporcionais aos números reais $a_1,a_2,\ldots,a_n$ é equivalente a determinar os números reais $x_1,x_2,\ldots,x_n$ de modo que:
+\begin{equation*}
+    \begin{cases}
+        x_1+x_2+\ldots+x_n=x\\ \\
+        \dfrac{x_1}{a_1}=\dfrac{x_2}{a_2}=\ldots=\dfrac{x_n}{a_n}
+    \end{cases}
+\end{equation*}
+aplicando as propriedades apresentadas anteriormente, temos que:
+\begin{equation*}
+    x_1=\dfrac{a_1\cdot x}{a_1+a_2+\ldots+a_n}, x_2=\dfrac{a_2\cdot x}{a_1+a_2+\ldots+a_n}, \ldots, x_n=\dfrac{a_n\cdot x}{a_1+a_2+\ldots+a_n}
+\end{equation*}
+
+\subsection{Divisão em partes inversamente proporcionais}
+Dividir um número $x \in\mathbb{R}$ em $n$ partes inversamente proporcionais aos números reais $a_1,a_2,\ldots,a_n$ é equivalente a determinar os números reais $x_1,x_2,\ldots,x_n$ de modo que:
+
+\begin{equation*}
+    \begin{cases}
+        x_1+x_2+\ldots+x_n=x\\ \\
+        \dfrac{x_1}{1/a_1}=\dfrac{x_2}{1/a_2}=\ldots=\dfrac{x_n}{1/a_n}
+    \end{cases}
+\end{equation*}
+aplicando as propriedades apresentadas anteriormente, temos que:
+\begin{equation*}
+    x_1=\dfrac{(1/a_1)\cdot x}{(1/a_1)+(1/a_2)+\ldots+(1/a_n)},\ldots,x_n=\dfrac{(1/a_n)\cdot x}{(1/a_1)+(1/a_2)+\ldots+(1/a_n)}
+\end{equation*}
+
+\subsection{Regra de três simples - Regra das flechas}
+A regra das flechas é um processo prático para resolver problemas envolvendo regra de três simples. Ela é baseada em três passos:
+\begin{enumerate}[\quad \quad 1)]
+    \item Construir uma tabela, dispondo na mesma coluna os valores de grandezas iguais e na mesma linha os valores correspondentes.
+    \item Identificar se os valores são diretamente ou inversamente proporcionais. Para isso, deve-se colocar inicialmente uma flecha apontando do menor para o maior valor da coluna de valores conhecidos. Depois, deve-se observar se um aumento na grandeza da coluna de valores conhecidos provoca um aumento na coluna de valores desconhecidos (diretamente proporcional), ou não (inversamente proporcional). Se as duas grandezas são diretamente proporcionais, coloca-se uma flecha no mesmo sentido da primeira, se não, coloca-se uma flecha no sentido oposto da primeira.
+    \item Se as duas flechas tiverem o mesmo sentido, a proporção é escrita do mesmo modo que está na tabela. Se as flechas tiverem sentidos opostos, então a proporção é escrita invertendo-se uma das razões e mantendo a outra do mesmo modo.
+\end{enumerate}
+
+\subsection{Regra de três composta - Regra das flechas}
+A regra das flechas é um processo prático para resolver problemas envolvendo regra de três composta. Ela é baseada em três passos:
+\begin{enumerate}[\quad\quad 1)]
+    \item Construir uma tabela, dispondo na mesma coluna os valores de grandezas iguais e na mesma linha os valores correspondentes.
+    \item A análise deve ser feita tomando como base a variável que possui um valor desconhecido $(x)$ e analisar como a alteração do seu valor implica na alteração de cada uma das outras variáveis, mantendo-se constante as demais grandezas. Se o aumento de $x$ provoca um aumento em $A$, a flecha deve ficar no mesmo sentido que $x$. Se o aumento de $x$ provoca uma diminução em $B$, a flecha deve ficar no sentido oposto.
+    \item Após essa análise, a equação de proporção envolvendo todas as grandezas é baseado em:
+    \begin{enumerate}[\quad i)]
+        \item Se uma grandeza é diretamente proporcional a outras duas, então é propocional ao produto destas duas grandezas.
+        \item Se uma grandeza é inversamente proporcional a outras duas, então é proporcional ao inverso do produto destas duas grandezas.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Porcentagem}
+\subsubsection{Acréscimo}
+Para determinar o resultado de um acréscimo de $x\%$ no valor de uma grandeza basta multiplicar o total da grandeza por $\left(1+\dfrac{x}{100}\right)$. Note que como o cálculo da porcentagem é uma medida relativa à um referencial, crescimento percentual $\neq$ ponto percentual; o primeiro é referente à um crescimento medido em relação ao anterior e o segundo uma medida absoluta da porcentagem.
+\subsubsection{Decréscimo}
+Para determinar o resultado de um decréscimo de $x\%$ no valor de uma grandeza basta multiplicar o total da grandeza por $\left(1-\dfrac{x}{100}\right)$.
+
+\subsection{Juros}
+\subsubsection{Definições}
+\begin{enumerate}[\quad \quad $\bullet$]
+    \item Capital inicial (C): valor em dinheiro inicialmente utilizado na aplicação.
+    \item Taxa de juros (i): taxa percentual aplicada para o acréscimo do capital por período de aplicação; para simplificação dos cálculos sempre consideramos 1 mês = 30 dias; 1 ano = 360 dias.
+    \item Juros (J): valor em dinheiro que deve ser pago a mais em relação ao capital inicial devido a aplicação da taxa de juros.
+    \item Período de aplicação: intervalo de tempo que se passa entre duas aplicações consecutivas de juros.
+    \item Parcela: valor a ser pago a cada período da aplicação.
+    \item Montante: capital inicial + juros.
+    \item Juros simples: ocorre quando a taxa de juros incide somente sobre o capital inicial.
+    \item Juros composto: ocorre quando os juros gerados a cada período são incorporados no cálculo do período seguinte.
+\end{enumerate}
+\subsubsection{Juros simples}
+\begin{equation*}
+    J=C\cdot i\cdot t
+\end{equation*}
+\begin{equation*}
+    M=C(1+i\cdot t)
+\end{equation*}
+
+\subsubsection{Juros composto}
+Chama-se capitalização o momento em que os juros são incorporados ao capital.
+\begin{equation*}
+    M=C(1+i)^t
+\end{equation*}
+
+\subsubsection{Rendas certas}
+Rendas certas/aplicações constantes/anuidades se referem à aplicações sucessivas de capital $A$, remunerados à uma taxa de juros $i$ durante um período de tempo $t$, onde o valor e a taxa são constantes. Assim:
+\begin{equation*}
+    R=A\cdot\dfrac{[(1+i)^t-1]}{i}
+\end{equation*}
+
+\section{Operações Algébricas}
+\subsection{Definições}
+\begin{enumerate}[\quad\quad$\bullet$]
+    \item Grau de um monômio: soma dos expoentes das variáveis que formam o monômio, levando-se em consideração o sinal de cada expoente.
+    \item Grau de um polinômio: maior dos graus dos monômios que compõem o polinômio.
+    \item Valor numérico de uma expressão algébrica: valor que se obtém substituindo as variáveis por números e efetuando os cálculos. 
+    \item Para representar o grau de um polinômio P, utiliza-se a simbologia $\partial P$.
+\end{enumerate}
+
+\subsection{Produto de polinômio}
+Dado um polinômio P e um polinômio Q, tal que $\partial P=m$ e $\partial Q=n$, o grau de produto dos polinômios P e Q é igual a soma do grau destes. Assim: 
+\begin{equation*}
+    \partial(P\cdot Q)=\partial P + \partial Q
+\end{equation*}
+
+\subsection{Produtos Notáveis}
+\subsubsection{Quadrado da soma}
+\begin{equation*}
+    (x+y)^2=x^2+2xy+y^2
+\end{equation*}
+
+\subsubsection{Quadrado da diferença}
+\begin{equation*}
+    (x-y)^2=x^2-2xy+y^2
+\end{equation*}
+
+\subsubsection{Cubo da soma}
+\begin{equation*}
+    (x+y)^3=x^3+3x^2y+3xy^2+y^3
+\end{equation*}
+
+\subsubsection{Cubo da diferença}
+\begin{equation*}
+    (x-y)^3=x^3-3x^2y+3xy^2-y^3
+\end{equation*}
+
+\subsubsection{Produto da soma pela diferença}
+\begin{equation*}
+    (x+y)(x-y)=x^2-y^2
+\end{equation*}
+
+\subsubsection{Quadrado da soma de três termos}
+\begin{equation*}
+    (x+y+z)^2=x^2+y^2+z^2+2xy+2xz+2yz
+\end{equation*}
+
+\subsection{Divisão de polinômios}
+Dado dois polinômios P e H $\neq$ 0, a divisão de P por H seguem as condições:
+\begin{enumerate}[\quad\quad 1)]
+    \item $P=Q\cdot H +R$
+    \item $\partial(H)\leq \partial(P)$
+    \item $\partial(R)<\partial(H)$
+    \item $\partial(H)=\partial(P)-\partial(Q)$
+\end{enumerate}
+
+\subsection{Divisão entre polinômios de uma variável}
+\subsubsection{Método de Descartes}
+\begin{enumerate}[\quad\quad$\bullet$]
+    \item Utiliza-se que $\partial Q=\partial P-\partial H$
+    \item Utiliza-se que $\partial R < \partial H\Rightarrow \partial R\leq\partial H-1$
+\end{enumerate}
+\subsubsection{Método da Chave}
+
+\usetikzlibrary{matrix}
+\begin{tikzpicture}
+\matrix (a) [matrix of math nodes, column sep=0pt]
+{
+P(x)     &   &    &    &  & H(x) \\
+       & P'(x)     &      &   & & Q(x) \\
+       &   \vdots     &    &      &   &    \\
+       &   R(x)     &      &    &   &   \\
+       &       &       &      &    & \phantom{.aaaa}  \\
+};
+\draw (a-1-6.north west) |- (a-1-6.south east);
+\draw (a-1-6.south west) |- (a-5-6.south west);
+\end{tikzpicture}
+
+\subsubsection{Teoremas}
+\begin{enumerate}[\quad \quad 1)]
+    \item Teorema do resto: O resto R(x) da divisão de um polinômio P(x) por (x-a) é igual ao valor numérico de p em a.
+    \item Teorema de D'Alembert: Um polinômio P(x) é divisível por (x-a) se e somente se a é raiz de P(x).
+    \item Teorema: Se um polinômio é divisível por (x-a) e (x-b), ele também é divisível pelo produto (x-a)(x-b). O contrário também é válido.
+    \item Teorema: Para todo $n\in\mathbb{N}$, temos que: $(x^n-a^n)=(x-a)(x^{n-1}+ax^{n-2}+a^2x^{n-3}+\cdots+a^{n-2}x+a^{n-1})$.
+    \item Teorema: Se n é um número ímpar, então: $(x^n+a^n)=(x+a)(x^{n-1}-ax^{n-2}+a^2x^{n-3}-\cdots-a^{n-2}x+a^{n-1})$.
+    \item Teorema: Se n é um número par, então: $(x^n-a^n)=(x+a)(x^{n-1}-ax^{n-2}+a^2x^{n-3}-\cdots+a^{n-2}x-a^{n-1})$.
+\end{enumerate}
+
+\subsection{Fatoração}
+Consiste em decompor um polinômio como multiplicação de dois ou mais polinômios. Os principais métodos de fatoração são:
+\begin{enumerate}[\quad\quad$\bullet$]
+    \item Elemento comum em evidência.
+    \item Fatoração utilizando produtos notáveis.
+    \item Fatoração por agrupamento.
+    \item Fatoração pela divisão por $x\pm a$.
+    \item Identificação de uma raiz. Para tal, pode-se utilizar do teorema das raízes racionais.
+\end{enumerate}
+\subsubsection{Teorema das raízes racionais}
+Dado um polinômio na forma $a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0$, o teorema das raízes racionais afirma que se essa equação admite o número racional $p/q$ como raíiz, com $p\in\mathbb{Z}$ e $q\in\mathbb{Z^*}$, então $a_0$ é divisível por $p$ e $a_n$ é divisível por $q$.
+
+\subsection{Máximo divisor comum de polinômios}
+O mdc de dois ou mais polinômios é o polinômio mônico $D, (kD\Rightarrow k=1)$, de maior grau que os divide simultaneamente. Utiliza-se a notação mdc (P,H). Desse modo, o mdc de dois polinômios é formado pelo produto das menores potências dos fatores primos que figuram nos dois polinômios.\\
+\indent Quando mdc (P,H)=1, diz-se que P e H são polinômios primos entre si.
+\subsubsection{Teorema}
+Se P e H são dois polinômios não nulos e R o resto da divisão de P por H, então mdc (P,H)=mdc (H,R). 
+
+\subsection{Mínimo múltiplo comum de polinômios}
+O mmc de dois ou mais polinômios é o polinômio mônico de menor grau que é divisível por todos eles. Desse modo, o mmc é igual ao produto dos fatores primos polinomiais que figuram em todas as expressões, quer sejam primos ou não, elevados ao respectivo maior expoente.
+
+
+\section{Frações Algébricas}
+\subsection{Redução ao mesmo denominador}
+Sejam as frações algébricas:
+\begin{equation*}
+    \dfrac{A_1}{B_1},\cdots,\dfrac{A_n}{B_n}
+\end{equation*}
+quando reduzidas ao mesmo denominador obtém-se, respectivamente, as frações:
+\begin{equation*}
+    \dfrac{A_1\cdot\dfrac{\text{mmc}(B_1,B_2,\cdots,B_n)}{B_1}}{\text{mmc}(B_1,B_2,\cdots,B_n)}, \cdots,\dfrac{A_n\cdot\dfrac{\text{mmc}(B_1,B_2,\cdots,B_n)}{B_n}}{\text{mmc}(B_1,B_2,\cdots,B_n)}
+\end{equation*}
+\indent Esse procedimento é fundamental para operação de adição entre frações algébricas com denominadores diferentes.
+
+\subsection{Racionalização de denominadores irracionais}
+Diz-se que uma fração está racionalizada quando seu denominador é um número racional não nulo.
+
+\subsubsection{1º caso}
+Frações da forma $\dfrac{a}{c\sqrt[n]{b}}$, com $a\in\mathbb{R^*},b,c\in\mathbb{Q^*},n\in\mathbb{N^*}$. Para este caso, basta multiplicar numerador e denominador pelo fator racionalizante $\sqrt[n]{b^{n-1}}$. Se atentar aos casos em que $n$ é par.
+
+
+\subsubsection{2º caso}
+Frações da forma $\dfrac{a}{p\sqrt[n]{b}\pm q\sqrt[n]{c}}$, com $a\in\mathbb{R^*},p,q,b,c\in\mathbb{Q^*},n\in\mathbb{N^*}$. A ideia será utilizar produtos notáveis.
+\begin{equation*}
+    \begin{aligned}
+        \dfrac{a}{\sqrt[n]{b}-\sqrt[n]{c}}&=\dfrac{a}{\sqrt[n]{b}-\sqrt[n]{c}}\cdot\dfrac{[(\sqrt[n]{b})^{n-1}+(\sqrt[n]{b})^{n-2}\sqrt[n]{c}+\cdots+\sqrt[n]{b}(\sqrt[n]{c})^{n-2}+(\sqrt[n]{c})^{n-1}]}{[(\sqrt[n]{b})^{n-1}+(\sqrt[n]{b})^{n-2}\sqrt[n]{c}+\cdots+\sqrt[n]{b}(\sqrt[n]{c})^{n-2}+(\sqrt[n]{c})^{n-1}]}\\\\
+        &=\dfrac{a[(\sqrt[n]{b})^{n-1}+(\sqrt[n]{b})^{n-2}\sqrt[n]{c}+\cdots+\sqrt[n]{b}(\sqrt[n]{c})^{n-2}+(\sqrt[n]{c})^{n-1}]}{b-c}
+    \end{aligned}
+\end{equation*}
+Analogamente, caso n seja par, tem-se que:
+\begin{equation*}
+    \begin{aligned}
+        \dfrac{a}{\sqrt[n]{b}+\sqrt[n]{c}}&=\dfrac{a}{\sqrt[n]{b}+\sqrt[n]{c}}\cdot\dfrac{[(\sqrt[n]{b})^{n-1}-(\sqrt[n]{b})^{n-2}\sqrt[n]{c}+\cdots+\sqrt[n]{b}(\sqrt[n]{c})^{n-2}-(\sqrt[n]{c})^{n-1}]}{[(\sqrt[n]{b})^{n-1}-(\sqrt[n]{b})^{n-2}\sqrt[n]{c}+\cdots+\sqrt[n]{b}(\sqrt[n]{c})^{n-2}-(\sqrt[n]{c})^{n-1}]}\\\\
+        &=\dfrac{a[(\sqrt[n]{b})^{n-1}-(\sqrt[n]{b})^{n-2}\sqrt[n]{c}+\cdots+\sqrt[n]{b}(\sqrt[n]{c})^{n-2}-(\sqrt[n]{c})^{n-1}]}{b-c}
+    \end{aligned}
+\end{equation*}
+Por último, caso n seja ímpar:
+\begin{equation*}
+    \begin{aligned}
+        \dfrac{a}{\sqrt[n]{b}+\sqrt[n]{c}}&=\dfrac{a}{\sqrt[n]{b}+\sqrt[n]{c}}\cdot\dfrac{[(\sqrt[n]{b})^{n-1}-(\sqrt[n]{b})^{n-2}\sqrt[n]{c}+\cdots-\sqrt[n]{b}(\sqrt[n]{c})^{n-2}+(\sqrt[n]{c})^{n-1}]}{[(\sqrt[n]{b})^{n-1}-(\sqrt[n]{b})^{n-2}\sqrt[n]{c}+\cdots-\sqrt[n]{b}(\sqrt[n]{c})^{n-2}+(\sqrt[n]{c})^{n-1}]}\\\\
+        &=\dfrac{a[(\sqrt[n]{b})^{n-1}-(\sqrt[n]{b})^{n-2}\sqrt[n]{c}+\cdots-\sqrt[n]{b}(\sqrt[n]{c})^{n-2}+(\sqrt[n]{c})^{n-1}]}{b+c}
+    \end{aligned}
+\end{equation*}
+
+\subsubsection{3º caso}
+Frações da forma $\dfrac{a}{p\sqrt[n]{b}\pm q\sqrt[m]{c}}$, com $a\in\mathbb{R^*},p,q,b,c\in\mathbb{Q^*},m,n\in\mathbb{N^*}$. Nesta situação, reduzem-se os radicais a um mesmo índice, $mmc(n,m)$, e aplicam-se as ideia anteriores.
+
+\subsection{Dízimas}
+Seja $r=p/q$ um número racional, escrito na forma irredutível, ou seja, $mmc(p,q)=1$.
+\begin{enumerate}[\quad\quad a)]
+    \item $r$ é um decimal exato se, e somente se, $q$ contém exclusivamente os fatores primos 2 ou 5. Neste caso, o número de casas decimais é igual ao maior dos expoentes que aparecem num desses primos.
+    \item $r$ é uma dízima periódica simples se, e somente se, $q$  contém exclusivamente fatores primos distintos de 2 e de 5. Uma dízima periódica simples apresenta seu período logo após a vírgula. Pode-se multiplicar o número por fatores múltiplos de 10 e subtraí-los para obter a fração geratriz.
+    \item $r$ é uma dízima periódica composta se, e somente se, $q$  contém além dos fatores primos 2 ou 5, algum outro fator primo distinto desses. Uma dízima periódica composta apresenta seu período alguma casa após a vírgula. O método de obtenção da fração geratriz é análogo ao caso anterior.
+\end{enumerate}
+
+\section{Equações}
+\subsection{Identidade e equações}
+Identidade algébrica é uma expressão algébrica válida para todos os possíveis valores que as variáveis podem assumir.\\
+\indent Equação é uma expressão matemática válida para valores pontuais das variáveis.\\
+\indent Sistema de equações é um conjunto de equações que são satisfeitas simultaneamente pelos valores das variáveis. O conjunto solução de um sistema de equação é o conjunto de todas as n-ênuplas ordenadas que representam as possíveis soluções do sistema.\\
+\indent Duas equações são denominadas equivalentes se possuem o mesmo conjunto solução.
+
+\subsection{Principios gerais sobre a transformação de equações}
+
+\subsubsection{Somar ou subtrair o mesmo número ou equação de ambos os lados da equação}
+\begin{equation*}
+    F_1(x)=F_2(x)\Leftrightarrow F_1(x)\pm G(x)=F_2(x)\pm G(x)
+\end{equation*}
+
+\subsubsection{Multiplicar ou dividir o mesmo número ou equação de ambos os lados da equação}
+\begin{equation*}
+    F_1(x)=F_2(x)\Leftrightarrow F_1(x)\cdot G(x)=F_2(x)\cdot G(x), G(x)\neq 0
+\end{equation*}
+\begin{equation*}
+    F_1(x)=F_2(x)\Leftrightarrow \frac{F_1(x)}{G(x)}=\frac{F_2(x)}{G(x)}, G(x)\neq 0
+\end{equation*}
+\indent Obs. 01: em alguns casos, ao multiplicar ambos os membros da equação pela mesma expressão algébrica, introduzimos raízes estranhas, que são as raízes da expressão que foi multiplicada. Desse modo, quando aplicamos a técnica de multiplicação, é necessário testar se todas as raízes da equação transformada são também raízes da equação original.\\
+\indent Obs. 02: em alguns casos, ao dividir ambos os membros da equação pela mesma expressão algébrica, a equação transformada pode não possuir todas as raízes da equação original. Portanto, quando aplicamos a técnica da divisão, é necessário verificar se algumas das raízes de $G(x)$ são também raízes da equação original.
+
+\subsubsection{Elevar ambos os lados da equação à uma mesma potência positiva}
+\begin{equation*}
+    F_1(x)=F_2(x)\Leftrightarrow [F_1(x)]^n=[F_2(x)]^n
+\end{equation*}
+\indent Obs. 01: em geral, há a introdução de raízes estranhas. Portanto, devemos agir tal qual ao caso da técnica de multiplicação e testar se todas as raízes da equação transformada são também raízes da equação original.
+
+\subsection{Equações do 1º grau}
+Equação do primeiro grau é toda equação que se apresenta na forma $ax+b=0$, após as devidas simplificações. Podem ser de uma variável ou de mais de uma variável.
+
+\subsubsection{Resolução de uma equação do 1º grau}
+\begin{equation*}
+    ax=b\Leftrightarrow x=\dfrac{b}{a}
+\end{equation*}
+
+\subsubsection{Discussão da fórmula}
+\begin{enumerate}[\quad\quad i)]
+    \item $a\neq0$ e $b\neq 0$: a equação possui exatamente uma raíz não nula dada por $x=b/a$.
+    \item $a\neq0$ e $b=0$: a equação admite somente a raíz $x=0$.
+    \item $a=0$ e $b\neq0$: a equação não admite nenhuma raíz.
+    \item $a=0$ e $b=0$: a equação admite infinitas raízes, ou seja, todo $x$ real é raíz.
+\end{enumerate}
+
+\subsubsection{Sistema de equações do 1º grau}
+Todo sistema de duas equações do primeiro grau com duas incógnitas pode ser reduzido a
+\begin{equation*}
+    \begin{cases}
+        a_1x+a_2y=a\\
+        b_1x+b_2y=b
+    \end{cases}
+\end{equation*}
+tal qual todo sistema de três equações do primeiro grau com três incógnitas pode ser reduzido a
+\begin{equation*}
+    \begin{cases}
+        a_1x+a_2y+a_3z=a\\
+        b_1x+b_2y+b_3z=b\\
+        c_1x+c_2y+c_3z=c
+    \end{cases}
+\end{equation*}
+Os métodos de resolução de um sistema do primeiro grau serão apresentados a seguir. Repare que estes métodos são recursivos, ou seja, para resolver um sistema de $n$ equações, utilizaremos o mesmo método $n-1$ vezes, de modo a resultar em uma equação do primeiro grau com uma variável, onde obteremos as outras $n-1$ restantes por substituição.
+
+\subsubsubsection{Método da comparação}
+\indent Consiste em isolar a mesma variável nas $n$ equações e igualar as expressões obtidas.
+
+\subsubsubsection{Método da substituição}
+\indent Consiste em isolar uma das variáveis em uma equação e substituir nas $n-1$ outras equações.
+
+\subsubsection{Método da adição}
+\indent Consiste em multiplicar as $n$ equações de modo que apareçam coeficientes simétricos em uma das variáveis, nas $n$ equações, e somá-las.
+
+\subsubsection{Discussão de um sistema de equações do 1º grau}
+Dois sistemas de equação do 1º grau são equivalentes se apresentam o mesmo conjunto solução.\\
+\indent A nomenclatura de um sistema baseado na sua quantidade de soluções é determinado pelos parâmetros a seguir.
+
+\subsubsubsection{Quantidade de equações igual à quantidade de incógnitas}
+Realizado os método de resolução de um sistema do primeiro grau e encontrado a equação final na forma $ax=b$ ou $ay=b$, etc. Se:
+    \begin{enumerate}[\quad i)]
+        \item $a\neq0$. O sistema possui apenas uma solução e denomina-se sistema possível e determinado.
+        \item $a=0$ e $b\neq0$. O sistema não apresenta solução e denomina-se sistema impossível.
+        \item $a=0$ e $b=0$. O sistema apresenta infinitas soluções e denomina-se sistema possível e indeterminado.
+    \end{enumerate}
+
+\subsubsubsection{Quantidade de equações maior que a quantidade de incógnitas}
+Dado que o sistema tenha $n$ equações e $p$ incógnitas, deve-se selecionar $p$ das $n$ equações e formar um sistema com $p$ equações e $p$ incógnitas.
+    \begin{enumerate}[\quad i)]
+        \item Se este sistema for possível e determinado, deve-se verificar se a solução desse sistema também satisfaz cada uma das $n-p$ equações restantes. Se satisfaz, o sistema original também é possível e determinado. Se pelo menos uma não satisfazer, então o sistema é impossível.
+        \item Se este sistema for impossível então o sistema original também é impossível.
+        \item Se este sistema for possível e indeterminado, o sistema original ainda assim dependerá das demais $n-p$ equações, que devem ser acrescentadas, uma de cada vez, até que o sistema com $p$ equações forme um sistema possível e determinado ou um sistema impossível. Se acrescentado todas as $n$ equações e o sistema ainda assim for possível e indeterminado, então o sistema original também será possível e indeterminado.
+    \end{enumerate}
+
+\subsubsection{Quantidade de equações menor que a quantidade de incógnitas}
+Neste caso o sistema pode ser possível e indeterminado ou impossível.
+
+
+\subsection{Equações do 2º grau}
+Equação do segundo grau é toda equação que se apresenta na forma $ax^2+bx+c=0$, após as devidas simplificações. Podem ser de uma variável ou de mais de uma variável.
+
+\subsubsection{Resolução e discussão de uma equação do 2º grau}
+\begin{enumerate}[\quad\quad 1)]
+    \item Completando o quadrado perfeito: consiste em fazer aparecer em um dos membros da equação, através de multiplicação e/ou soma de constantes, o produto notável $(mx+n)^2$. Assim, a equação transformada equivalente a equação original terá forma $(mx+n)^2=r$. 
+        \begin{enumerate}[\quad i)]
+            \item Se $r>0$, a equação possui duas raízes reais distintas, dadas por $x=\dfrac{-n\pm\sqrt{r}}{m}$.
+            \item Se $r=0$, a equação possui uma única raíz real, $x=-n/m$.
+            \item Se $r<0$, a equação não possui raízes reais.
+        \end{enumerate}
+    \item Método de Bhaskara: consiste em utilizar a fórmula $x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$ para determinação das raízes da equação. Esta também pode ser reescrita como $x=\dfrac{-b\pm\sqrt{\Delta}}{2a}$, onde $\Delta=b^2-4ac$.
+        \begin{enumerate}[\quad i)]
+            \item Se $\Delta>0$, a equação possui duas raízes reais distintas.
+            \item Se $\Delta=0$, a equação possui uma única raiz real.
+            \item Se $\Delta<0$, a equação não possui raízes reais.
+        \end{enumerate}
+\end{enumerate}
+
+\subsubsection{Relação entre as raízes e os coeficientes de uma equação do segundo grau}
+\begin{equation*}
+    \begin{cases}
+        x_1+x_2=\dfrac{-b}{a}\\ \\
+        x_1\cdot x_2=\dfrac{c}{a}
+    \end{cases}
+\end{equation*}
+
+\subsubsection{Máximo e mínimo de uma equação do 2º grau}
+Dado $f(x)=ax^2+bx+c$, temos que:
+\begin{enumerate}[\quad\quad 1)]
+    \item Se $a>0$, o valor mínimo de $f(x)=-\dfrac{\Delta}{4a}$, que ocorre para $x=-\dfrac{b}{2a}$.
+    \item Se $a<0$, o valor máximo de $f(x)=-\dfrac{\Delta}{4a}$, que ocorre para \\$x=-\dfrac{b}{2a}$.
+\end{enumerate}
+esses valores são conhecidos como ``$x$ do vértice'' e ``$y$ do vértice''.
+
+\subsection{Equações biquadradas}
+Toda equação do 4º grau incompleta, na forma $ax^4+bx^2+c=0$, é uma equação biquadrada, que pode ser resolvida por uma simples substituição algébrica.
+\begin{enumerate}[\quad\quad 1)]
+        \item $ax^4+bx^2=0$. Se $a$ e $b$ possuirem o mesmo sinal, a única raiz real dessa equação é 0. Se possuirem sinais contrarios, as raízes são: $0, \sqrt{-\dfrac{b}{a}}$ e $-\sqrt{-\dfrac{b}{a}}$.
+        \item $ax^4+c=0$. Se $a$ e $c$ possuirem o mesmo sinal, não há raízes reais. Se possuirem sinais contrários, as raízes são: $\sqrt[4]{-\dfrac{c}{a}}$ e $-\sqrt[4]{-\dfrac{c}{a}}$.
+        \item $ax^4+bx^2+c=0$. Utiliza-se a substituição algébrica $x^2=y$. Caso $y_1\geq 0$ e $y_2\geq 0$, as raízes são: $x_1=\sqrt{\dfrac{-b-\sqrt{b^2-4ac}}{2a}}, x_2=-\sqrt{\dfrac{-b-\sqrt{b^2-4ac}}{2a}}, \\x_3=\sqrt{\dfrac{-b+\sqrt{b^2-4ac}}{2a}}$ e $x_4=-\sqrt{\dfrac{-b+\sqrt{b^2-4ac}}{2a}}$.
+\end{enumerate}
+
+
+\subsection{Equações modulares}
+Define-se módulo, ou valor absoluto, de um número real do seguinte modo:
+\begin{equation*}
+    |x|=\begin{cases}
+        x, &\text{se}\quad x\geq 0\\
+        -x, &\text{se}\quad x< 0\\
+    \end{cases}
+\end{equation*}
+outra maneira de definir o módulo é utilizando a seguinte relação: $|x|=\sqrt{x^2}$.\\
+\indent As propriedades do módulo de um número real são as seguintes:
+\begin{enumerate}[\quad\quad i)]
+    \item $|x|=|-x|$
+    \item $|x\cdot y|=|x|\cdot|y|$
+    \item $\left|\dfrac{x}{y}\right|=\dfrac{|x|}{|y|}$
+    \item $|x|^2=|x^2|$
+    \item $|x|=0\Leftrightarrow x=0$
+    \item $|x|-|y|\leq|x+y|\leq|x|+|y|$
+\end{enumerate}
+\indent \indent Uma equação algébrica é denominada equação modular se envolver o módulo de alguma expressão que contenha uma variável da equação.\\
+\indent A solução de uma equação modular é baseada analisando-se quando a expressão algébrica no interior do módulo é positiva ou negativa e, para cada caso, retirando-se as barras do módulo de acordo com a definição de módulo.\\
+\indent Em uma equação modular, sempre é necessário verificar se cada uma das soluções encontradas para a equação pertence ao intervalo que foi considerado no cálculo de cada solução.\\
+\indent Um interessante artifício é o de estudo do sinal por meio da reta real.
+
+\subsection{Equações irracionais}
+Uma equação é denominada de irracional quando envolve a radiciação de alguma expressão algébrica.
+\subsubsection{Resolução de equações irracionais}
+Não há um método universal de resolução das equações irracionais. São procurado meios de eliminar a radiciação de modo que seja determinado uma equação transformada cuja forma de resolver seja conhecida. Os meios mais comuns são:
+\begin{enumerate}[\quad\quad 1)]
+    \item Elevar os dois membros da equação por um mesmo número inteiro positivo, em determinadas situação, mais de uma vez. Essa operação, em geral, leva a introdução de raízes estranhas, desse modo, devem ser testadas as raízes encontradas.
+    \item Realizar a substituição de variáveis de modo que seja possível eliminar todas as radiciações. A nova equação deve ser resolvida e, finalmente, deve-se desfazer a substituição de modo a encontrar as soluções da equação original. Nesse caso também é necessário verificar se as raízes da equação transformada são raízes da equação original.
+\end{enumerate}
+
+\subsection{Sistema de equações não-lineares}
+Um sistema de equações é chamado de não-linear se é possível identificar algum termo que não seja de 1º grau em uma variável, em pelo menos uma das equações que compõe o sistema.
+
+\subsubsection{Resolução de sistemas não-lineares}
+Análogo ao caso das equações irracionais, não há fórmula para resolução de sistema não linear. Deve-se observar se um produto notável pode ser aplicado, se uma troca de variáveis pode simplificar a equação ou se é possível identificar uma fatoração nas expressões.
+
+
+\section{Inequações}
+\subsection{Desigualdade e inequações}
+Desigualdade é uma expressão algébrica que pode ser expressa das maneiras $F(x)>G(x), \, F(x)<G(x),\, F(x)\geq G(x), \, F(x)\leq G(x)$, válida para todos os possíveis valores pertencentes aos domínios de $F(x)$ e $G(x)$.\\
+\indent Inequação é uma expressão algébrica válida para um subconjunto dos valores pertencentes aos domínios de $F(x)$ e $G(x)$. \\
+\indent Duas equações são equivalentes se apresentam o mesmo conjunto solução.
+
+\subsection{Operações}
+\subsubsection{Somar ou subtrair o mesmo número ou equação de ambos os lados da inequação}
+\begin{equation*}
+    F_1(x)>F_2(x) \Leftrightarrow F_1(x)\pm G(x)>F_2(x)\pm G(x)
+\end{equation*}
+
+\subsubsection{Multiplicar ou dividir o mesmo número ou equação de ambos os lados da inequação}
+\begin{enumerate}[\quad\quad i)]
+    \item O número ou equação que está multiplicando ou dividindo a inequação é positivo.
+        \begin{equation*}
+            F_1(x)>F_2(x) \Leftrightarrow F_1(x)\cdot G(x) > F_2(x) \cdot G(x)
+        \end{equation*}
+        \item O número ou equação que está multiplicando ou dividindo a inequação é negativo.
+        \begin{equation*}
+            F_1(x)>F_2(x) \Leftrightarrow F_1(x)\cdot G(x) < F_2(x) \cdot G(x)
+        \end{equation*}
+\end{enumerate}
+\indent \indent Obs.: é necessário observar se as raízes obtidas são também raízes da equação original e/ou alguma raíz foi omitida durante a resolução.
+
+\subsubsection{Elevar ambos os lados da inequação à uma potência ímpar}
+\begin{equation*}
+    F_1(x)>F_2(x) \Leftrightarrow [F_1(x)]^{2n+1}>[F_2(x)]^{2n+1}
+\end{equation*}
+\indent Obs.: o conjunto solução, análogo ao caso de somar ou subtrair o mesmo número ou equação, não é alterado.
+
+\subsubsection{Elevar ambos os lados da inequação à uma potência par}
+\begin{equation*}
+    F_1(x)>F_2(x) \Leftrightarrow [F_1(x)]^{2n}>[F_2(x)]^{2n}
+\end{equation*}
+\indent Obs.: para este caso, deve-se fazer a interseção do conjunto solução com o domínio da inequação.
+
+\subsubsection{Elevar ambos os lados da inequação por $-1$}
+\begin{equation*}
+    F_1(x)>F_2(x) \Leftrightarrow \dfrac{1}{F_1(x)} < \dfrac{1}{F_2(x)}, \text{ caso } F_1(x)\cdot F_2(x)>0 
+\end{equation*}
+\indent Obs.: é importante analisar os números que zeram o denominador e fazer atentamente o estudo dos sinais.
+
+\subsection{Inequações do 1º grau}
+\begin{equation*}
+    ax+b>cx+d\Leftrightarrow x(a-c)>d-b
+\end{equation*}
+\begin{enumerate}[\quad\quad i)]
+    \item Se $(a-c)>0\Rightarrow x>\dfrac{d-b}{a-c}$
+    \item Se $(a-c)<0\Rightarrow x<\dfrac{d-b}{a-c}$
+    \item Se $(a-c)=0$ e $d-b>0\Rightarrow S=\varnothing$
+    \item Se $(a-c)=0$ e $d-b<0\Rightarrow S=\{x\in\mathbb{R}\}$
+\end{enumerate}
+
+\subsection{Sistema de inequações do 1º grau com uma incógnita}
+\begin{equation*}
+    \left\{\begin{aligned}
+        a_1x+b_1>c_1x+d_1 \\
+        a_2x+b_2>c_2x+d_2
+    \end{aligned}\right.
+\end{equation*}
+\indent A determinação do conjunto solução é obtido da seguinte maneira:
+\begin{enumerate}[\quad\quad 1)]
+    \item Obtêm-se o intervalo que é o conjunto solução de cada uma das inequações.
+    \item O conjunto solução do sistema de inequações é a interseção do conjunto solução de cada inequação.
+\end{enumerate}
+
+\subsection{Inequações do 2º grau}
+O conjunto solução é feito baseando-se no estudo do sinal ou gráfico da função. Considerando $r$ e $s$ as raízes da equação do segundo grau, temos:
+\begin{enumerate}[\quad\quad i)]
+    \item $\Delta>0$
+        \begin{enumerate}[\quad 1)]
+            \item Se $a>0\Rightarrow ax^2+bx+c>0$ se $x<r$ ou $x>s$ e $ax^2+bx+c<0$ se $r<x<s$.
+            \item Se $a<0\Rightarrow ax^2+bx+c>0$ se $r<x<s$ e $ax^2+bx+c<0$ se $x<r$ ou $x>s$.
+        \end{enumerate}
+    \item $\Delta=0$
+        \begin{enumerate}[\quad 1)]
+            \item Se $a>0\Rightarrow ax^2+bx+c \geq 0, \forall x \in \mathbb{R}$
+            \item Se $a<0\Rightarrow ax^2+bx+c \leq 0, \forall x \in \mathbb{R}$
+        \end{enumerate}
+    \item $\Delta<0$
+        \begin{enumerate}[\quad 1)]
+            \item Se $a>0\Rightarrow ax^2+bx+c > 0, \forall x \in \mathbb{R}$
+            \item Se $a<0\Rightarrow ax^2+bx+c < 0, \forall x \in \mathbb{R}$
+        \end{enumerate}
+\end{enumerate}
+
+\subsection{Sistema de inequações do 2º grau}
+\begin{equation*}
+    \left\{\begin{aligned}
+        a_1x^2+b_1x+c_1>d_1x^2+e_1x+f_1\\
+        a_2x^2+b_2x+c_2>d_2x^2+e_2x+f_2\\
+        a_3x^2+b_3x+c_3>d_3x^2+e_3x+f_3
+    \end{aligned}\right.
+\end{equation*}
+\indent A determinação do conjunto solução é obtido da seguinte maneira:
+\begin{enumerate}[\quad\quad 1)]
+    \item Obtêm-se o intervalo que é o conjunto solução de cada uma das inequações.
+    \item O conjunto solução do sistema de inequações é a interseção do conjunto solução de cada inequação.
+\end{enumerate}
+
+
+\subsection{Inequações com funções produto e funções racionais}
+\subsubsection{Função produto}
+\begin{equation*}
+    F(x)=G(x)\cdot  H(x)
+\end{equation*}
+
+\subsubsection{Função racional}
+\begin{equation*}
+    F(x)=\dfrac{G(x)}{H(x)}
+\end{equation*}
+
+\subsubsection{Determinação do conjunto solução}
+\begin{enumerate}[\quad\quad i)]
+    \item Reduz-se a inequação até ficar na forma $\dfrac{G_1(x)\cdot G_2(x)\cdot\ldots\cdot G_n(x)}{H_1(x)\cdot H_2(x)\cdot\ldots\cdot H_n(x)}>0$
+    \item Faz-se o estudo do sinal. Nesta etapa, é necessário atentar-se que as raízes de $H(x)$ não podem ser incluídos na resolução (intervalo aberto).
+\end{enumerate}
+
+\subsection{Inequações simultâneas}
+A determinação do conjunto solução de uma inequação simultânea $F(x)>G(x)>H(x)$ consiste em resolver o sistema de inequações:
+\begin{equation*}
+    \left\{\begin{aligned}
+        F(x)>G(x)\\
+        G(x)>H(x)
+    \end{aligned}\right.
+\end{equation*}
+lembrando que o conjunto solução do sistema é a interseção do conjunto solução de cada inequação.
+
+\subsection{Inequações modulares}
+A determinação do conjunto solução é feito através dos seguintes passos:
+\begin{enumerate}[\quad\quad i)]
+    \item Determinação do sinal das expressões algébricas contida nos módulos, identificando os intervalos das variáveis onde ocorre a troca do sinal.
+    \item Separação da solução da inequação em diversos intervalos da variável, onde os intervalos são definidos de acordo com a mudança de pelo menos uma das expressões algébricas.
+    \item Fazer a interseção do intervalo obtido após a extração da barra dos módulos com o respectivo intervalo de validade da variável de estudo.
+    \item O conjunto solução final é calculado fazendo a união dos intervalos obtidos na etapa anterior.
+\end{enumerate}
+
+\subsection{Inequações irracionais}
+A determinação do conjunto solução é feito através dos seguintes passos:
+\begin{enumerate}[\quad\quad i)]
+    \item No caso de haverem raízes de ordem par, determinar a condição de existência de cada uma delas.
+    \item Após utilizar os artifícios de eliminação de raíz, devem ser testado os intervalos obtidos da equação original para verificar se o satisfazem.
+    \item O conjunto solução final é a interseção entre o intervalo encontrado como resposta no item anterior e a condição de existência.
+\end{enumerate}
+
+\end{document}
