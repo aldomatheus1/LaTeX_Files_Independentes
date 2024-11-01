@@ -1,0 +1,16 @@
+            - name: Compile All LaTeX
+  # You may pin to the exact commit or the version.
+  # uses: DanySK/compile-latex-action@8e5fe5a85d2730c33c330d471fda8c292af4629f
+  uses: DanySK/compile-latex-action@0.1.1
+  with:
+    # The command to invoke to compile. Defaults to 'rubber --inplace -d --synctex -s'
+    compile-command: # default is rubber --unsafe --inplace -d --synctex -s
+    # A file used internally. Modify if it clashes with some file of yours.
+    compile-list: # default is compile-list
+    # A file used internally. Modify if it clashes with some file of yours.
+    failure-list: # default is failure-list
+    # A file registering all the successful compilations. Modify if it clashes with some file of yours. Use it to identify files to deploy.
+    success-list: # default is success-list
+    # A file used internally. Modify if it clashes with some file of yours.
+    current-failure-list: # default is current-failure-list
+          
